@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "header.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -24,7 +26,7 @@ int fget_word(FILE* fp, char *word){
 	
 	while ((c=fgetc(fp))!=EOF)
 	{
-		if(is_whitespace(c)==0);
+		if(is_whitespace(c)==0)
 			break;
 	}
 	
@@ -71,10 +73,11 @@ int main(int argc, char *argv[]) {
 	//word reading&analysis
 	while((fget_word(fp,word))!=0)
 	{
-		printf("%s\n", word);
+		count_word(word);
 	}
 	
-	
+		print_word();
+		
 	//output
 	fclose(fp);
 	return 0;
